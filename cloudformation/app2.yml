@@ -10,7 +10,7 @@ Resources:
   RDSSecret: # ここでRDSのパスワードとなるランダム文字列を生成
     Type: "AWS::SecretsManager::Secret"
     Properties:
-      Name: "RDSSecret"
+      Name: "RDSPW"
       Description: "RDS password for my RDS instance"
       GenerateSecretString:
         SecretStringTemplate: '{"username": "admin"}'
