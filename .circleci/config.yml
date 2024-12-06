@@ -22,17 +22,17 @@ jobs:
           aws_secret_access_key: AWS_SECRET_ACCESS_KEY
           region: AWS_DEFAULT_REGION
       - aws-cloudformation/deploy:
-          stack-name: "lecture13-network-stack"
+          stack-name: "lec13-network-stack"
           template-file-path: "cloudformation/net.yml"
       - aws-cloudformation/deploy:
-          stack-name: "lecture13-security-stack"
+          stack-name: "lec13-security-stack"
           template-file-path: "cloudformation/sec.yml"
       - aws-cloudformation/deploy:
-          stack-name: "lecture13-app1-stack"
+          stack-name: "lec13-app1-stack"
           template-file-path: "cloudformation/app1.yml"
           capabilities: CAPABILITY_NAMED_IAM
       - aws-cloudformation/deploy:
-          stack-name: "lecture13-app2-stack"
+          stack-name: "lec13-app2-stack"
           template-file-path: "cloudformation/app2.yml"
       
       - run:
