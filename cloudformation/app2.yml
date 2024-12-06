@@ -21,7 +21,6 @@ Resources:
   RDS:
     Type: AWS::RDS::DBInstance
     Properties:
-    
       StorageType: gp2
       AllocatedStorage: 20
       PubliclyAccessible: false
@@ -46,7 +45,7 @@ Resources:
     Type: AWS::RDS::DBSubnetGroup
     Properties:
       DBSubnetGroupDescription: for RDS
-      DBSubnetGroupName: lecture13RDSSubnetgroup
+      DBSubnetGroupName: lec13RDSSubnetgroup
       SubnetIds:
         - !ImportValue lec13-PrivateSubnet1id
         - !ImportValue lec13-PrivateSubnet2id

@@ -65,7 +65,6 @@ Resources:
   13InternetGateway:
     Type: AWS::EC2::InternetGateway
     Properties:
-
       Tags:
         - Key: Name
           Value: !Sub ${NameBase}-internetgateway
