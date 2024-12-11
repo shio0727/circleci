@@ -39,7 +39,6 @@ jobs:
           name: 環境変数の設定
           command: |
             aws cloudformation describe-stacks --region ap-northeast-1 --stack-name lecture13-app2-stack --query 'Stacks[].Outputs[?OutputKey==`RDSInstanceEndpoint`].OutputValue' --output text > /tmp/AWS_DB_HOST.txt
-            aws secretsmanager get-secret-value --secret-id RDSSecret --region ap-northeast-1 --query 'SecretString' --output text | jq -r '.password' > /tmp/AWS_DB_PW.txt
             secret=$(aws secretsmanager get-secret-value --secret-id RDSSecret --region ap-northeast-1 --query 'SecretString' --output text)
             password=$(echo $secret | sed -e 's/.*"password":"\([^"]*\)".*/\1/')
             echo $password > /tmp/AWS_DB_PW.txt
