@@ -1,0 +1,20 @@
+---
+- hosts: all
+  become: yes
+  become_method: sudo
+  
+  tasks:
+    - name: Include 01-yum
+      include_role:
+        name: 01-yum
+
+    - name: Include 02-ruby
+      include_role:
+        name: 02-ruby
+        
+  vars: 
+    app_dir: /home/ec2-user/raisetech-live8-sample-app
+    ansible_user: ec2-user
+    aws_db_pw : "{{ (lookup('env','AWS_DB_PW')) }}"
+    aws_db_host : "{{ (lookup('env','AWS_DB_HOST')) }}"
+
