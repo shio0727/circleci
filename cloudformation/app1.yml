@@ -34,7 +34,7 @@ Resources:
       Tags:
         - Key: Name
           Value: !Sub  ${NameBase}-ec21a
-      KeyName: circleci
+      KeyName: kadai4-key
       
 # Elastic IP作成
   ElasticIP:
